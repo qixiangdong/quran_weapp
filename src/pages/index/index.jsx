@@ -4,9 +4,18 @@ import './index.scss'
 
 export default class Index extends Component {
 
+  state = {
+    surahs: []
+  }
+
   componentWillMount () { }
 
-  componentDidMount () { }
+  componentDidMount () {
+    let surahsJson = require('../../datas/surahs.json');
+    this.setState({
+      surahs: surahsJson
+    });
+   }
 
   componentWillUnmount () { }
 
@@ -17,7 +26,18 @@ export default class Index extends Component {
   render () {
     return (
       <View className='index'>
-        <Text>Hello world!</Text>
+       {
+         this.state.surahs.map((surah=>{
+          return (
+            <View>
+              <Text>{surah.name}</Text>
+              <Text>{surah.translation_zh}</Text>
+              <Text>{surah.revelation_type}</Text>
+
+            </View>
+          )
+         }))
+       }
       </View>
     )
   }
