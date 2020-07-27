@@ -16,7 +16,7 @@ export default class Surah extends Component {
         const translation_zh = getCurrentInstance().router.params.translation_zh
         const surah_content = require('../../datas/surah_content/'+number+'.json')
         const element = surah_content.verses.map((ayah)=>{
-            return <Ayah number={ayah.number} text={ayah.text} translation={ayah.translation} key={ayah.number}/>
+            return <Ayah number={ayah.number} text={ayah.text} translation={ayah.translation_zh} key={ayah.number}/>
         })
         return (
             <View>
