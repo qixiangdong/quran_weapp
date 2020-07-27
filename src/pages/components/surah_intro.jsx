@@ -6,9 +6,9 @@ import "taro-ui/dist/style/components/flex.scss"
 export default class SurahIntro extends Component {
 
     handleNavigate = () =>{
-        const {number} = this.props
+        const {number, translation_zh} = this.props
         Taro.navigateTo({
-            url: '/pages/surah/surah?number='+number
+            url: '/pages/surah/surah?number='+number+'&translation_zh='+translation_zh
         })
     }
 
