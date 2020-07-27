@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
-import { View, Text } from '@tarojs/components'
+import { View } from '@tarojs/components'
 import './index.scss'
+import SurahList from '../components/surah_list';
 
 export default class Index extends Component {
 
   state = {
+    loading: true,
     surahs: []
   }
 
@@ -13,7 +15,8 @@ export default class Index extends Component {
   componentDidMount () {
     let surahsJson = require('../../datas/surahs.json');
     this.setState({
-      surahs: surahsJson
+      surahs: surahsJson,
+      loading: false
     });
    }
 
@@ -24,20 +27,10 @@ export default class Index extends Component {
   componentDidHide () { }
 
   render () {
+    const {loading, surahs} = this.state
     return (
       <View className='index'>
-       {
-         this.state.surahs.map((surah=>{
-          return (
-            <View>
-              <Text>{surah.name}</Text>
-              <Text>{surah.translation_zh}</Text>
-              <Text>{surah.revelation_type}</Text>
-
-            </View>
-          )
-         }))
-       }
+       <SurahList surahs={surahs} loading={loading} />
       </View>
     )
   }
