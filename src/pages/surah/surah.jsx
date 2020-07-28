@@ -19,11 +19,11 @@ export default class Surah extends Component {
             return <Ayah number={ayah.number} text={ayah.text} translation={ayah.translation_zh} key={ayah.number}/>
         })
         return (
-            <View>
-                <View>
+            <View className="page">
+                <View className="title">
                 {translation_zh}
                 </View>
-                <View>
+                <View className="content">
                 {element}
                 </View>
                

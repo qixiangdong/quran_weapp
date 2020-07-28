@@ -1,6 +1,8 @@
 import Taro from '@tarojs/taro'
 import React, { Component } from 'react'
 import { View, Text } from '@tarojs/components'
+import "taro-ui/dist/style/components/flex.scss"
+import "./surah_intro.scss"
 
 export default class SurahIntro extends Component {
 
@@ -24,14 +26,30 @@ export default class SurahIntro extends Component {
     render() {
         const {number, transliteration_en, translation_zh, revelation_type, total_verses} = this.props
         return (
-           <View onClick={this.handleNavigate} className='at-row'>
-           <Text className='at-col' at-col-1>{number}</Text>
-           <Text className='at-col' at-col-3>{transliteration_en}</Text>
-           <Text className='at-col' at-col-3>{translation_zh}</Text>
-           <Text className='at-col' at-col-2>{revelation_type}</Text>
-           <Text className='at-col' at-col-2>{total_verses}</Text>
+          <View class="flex-page">
+            <View onClick={this.handleNavigate} className="at-row at-row__align--center">
+              <View className="at-col number">
+                <Text>{number}</Text>
+              </View>
+              <View className="at-col">
+                <View>
+                  <Text>{translation_zh}</Text>
+                </View>
+                <View>
+                  <Text>{transliteration_en}</Text>
+                </View>
+              </View>
 
-         </View>
-        )
+              <View className="at-col">
+                <View>
+                  <Text>{revelation_type}</Text>
+                </View>
+                <View>
+                  <Text>{total_verses}节</Text>
+                </View>
+              </View>
+            </View>
+          </View>
+        );
     }
 }
