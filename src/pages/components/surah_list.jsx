@@ -28,12 +28,14 @@ export default class SurahList extends Component {
 
     const element = surahs.map((surah)=>{
       return (
+        
         <SurahIntro
           key={surah.number}
           number={surah.number}
           transliteration_en={surah.transliteration_en} 
           translation_zh={surah.translation_zh} 
           revelation_type={surah.revelation_type}
+          total_verses={surah.total_verses}
         />
       )
     })
