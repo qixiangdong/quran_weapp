@@ -35,7 +35,7 @@ export default class SurahIntro extends Component {
                 <View>
                   <Text>{translation_zh}</Text>
                 </View>
-                <View>
+                <View className="engname">
                   <Text>{transliteration_en}</Text>
                 </View>
               </View>
@@ -44,7 +44,7 @@ export default class SurahIntro extends Component {
                 <View>
                   <Text>{revelation_type}</Text>
                 </View>
-                <View>
+                <View className="totalverses">
                   <Text>{total_verses}节</Text>
                 </View>
               </View>

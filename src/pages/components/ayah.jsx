@@ -7,10 +7,10 @@ export default class Ayah extends Component {
         const { number, translation } = this.props
         return (
             <View className="ayah">
-                <Text>
+                <Text selectable='true'>
                     {number}.
                 </Text>
-                <Text>{translation}</Text>
+                <Text selectable='true'>{translation}</Text>
             </View>
         )
     }
